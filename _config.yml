@@ -89,23 +89,23 @@ avatar: "/assets/img/avatar/profile.jpg"
 toc: true
 
 comments:
-  active: 'utterances'     # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: 'giscus'     # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
     shortname:    # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
     repo: BaadMaro/baadmaro.github.io       # <gh-username>/<repo>
-    issue_term: "pathname"
+    issue_term: "title"
     label: "Comments"
     theme: "dark-blue"
   # Giscus options › https://giscus.app
   giscus:
-    repo:             # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping:          # optional, default to 'pathname'
+    repo: BaadMaro/baadmaro.github.io          # <gh-username>/<repo>
+    repo_id: "R_kgDOHRG0bg"
+    category: "General"
+    category_id: "DIC_kwDOHRG0bs4CO51Z" 
+    mapping: "title"          # optional, default to 'pathname'
     input_position:   # optional, default to 'bottom'
     lang:             # optional, default to the value of `site.lang`
 
