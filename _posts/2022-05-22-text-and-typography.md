@@ -1,7 +1,7 @@
 ---
 title: Text and Typography
 author: cotes
-date: 2022-05-22 00:33:00 +0000
+date: 2022-05-22 00:33:00 +0800
 categories: [Blogging, Demo]
 tags: [typography]
 math: true
