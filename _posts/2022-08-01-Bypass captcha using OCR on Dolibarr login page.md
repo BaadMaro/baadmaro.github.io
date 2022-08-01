@@ -2,9 +2,9 @@
 
 layout: post
 
-title: Bypass captcha using OCR on Dolibarr login page
+title: Bypass captcha using OCR on Dolibarr login page 
 
-categories: [WEB]
+categories: [Web]
 
 tags: [Dolibarr]
 
