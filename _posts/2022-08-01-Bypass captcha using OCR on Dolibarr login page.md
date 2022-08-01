@@ -311,6 +311,7 @@ Now i'll combine the ocr reading with the login post request to bruteforce login
 - Get the used cookies
 - Simple code structure for testing. I'll make a clean version in my github repository for the tool (at the end of the article).
 
+## POC
 
 ```python
 import requests
