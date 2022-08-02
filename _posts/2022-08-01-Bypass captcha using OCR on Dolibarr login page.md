@@ -283,7 +283,7 @@ For the error message, we have a string "Bad value for login or password". It's 
 	Bad value for login or password	</div></div>
 ```
 
-![[Pasted image 20220801151908.png]]
+![Pasted image 20220801151908](https://user-images.githubusercontent.com/72421091/182267159-92d06ea8-a8b1-4cc3-ae2c-4d5e9c859498.png)
 
 For the wrong captcha, we see a different message but in the same div
 
