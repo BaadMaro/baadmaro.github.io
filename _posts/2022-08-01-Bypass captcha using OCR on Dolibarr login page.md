@@ -20,6 +20,11 @@ author:
 
 Today i'm going to explain how i was able to bypass captcha using OCR on Dolibarr login page, and create a script for it.
 
+Output : 
+- I published the tool with the name DoliBrute. I'll work on it for more updates
+
+https://github.com/BaadMaro/DoliBrute
+
 
 # Dolibarr
 
