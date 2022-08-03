@@ -23,7 +23,7 @@ Today i'm going to explain how i was able to bypass captcha using OCR on Dolibar
 Output : 
 - I published the tool with the name DoliBrute. I'll work on it for more updates
 
-https://github.com/BaadMaro/DoliBrute
+[https://github.com/BaadMaro/DoliBrute](https://github.com/BaadMaro/DoliBrute)
 
 
 # Dolibarr
@@ -117,7 +117,8 @@ Let's test the login request.
 
 ![Pasted image 20220731221618](https://user-images.githubusercontent.com/72421091/182227601-e1a9a9fb-799f-4286-879a-5294c426f3f9.png)
 
-- Request : 
+- Request :  
+
 ```http
 POST /index.php?mainmenu=home HTTP/1.1
 Host: 192.168.1.110
