@@ -23,7 +23,7 @@ permalink: /feed.xml
   <logo>{{ site.baseurl }}/assets/img/favicons/favicon-96x96.png</logo>
 
 {% for post in site.posts limit: 5 %}
-  {% assign post_absolute_url = site.url | append post.url %}
+  {% assign post_absolute_url = site.url | append: post.url %}
   <entry>
     <title>{{ post.title }}</title>
     <link href="{{ post_absolute_url }}" rel="alternate" type="text/html" title="{{ post.title }}" />
