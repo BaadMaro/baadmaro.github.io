@@ -30,25 +30,25 @@ Output :
 
 Dolibarr ERP CRM is a modern software package to manage your company or foundation's activity (contacts, suppliers, invoices, orders, stocks, agenda, accounting, ...). It is open source software (written in PHP) and designed for small and medium businesses, foundations and freelancers.
 
-- Website : https://www.dolibarr.org/
-- Github : https://github.com/Dolibarr/dolibarr
+- Website : <https://www.dolibarr.org/>
+- Github : <https://github.com/Dolibarr/dolibarr>
 
 # Setup a lab for testing
 
 There is many ways to install Dolibarr to be able to interact with it :
-- Simple installation : you can download packaged versions from your system https://www.dolibarr.org/downloads.php
-- Advance installation : Build from source and setup the web server and datatbase https://github.com/Dolibarr/dolibarr#advanced-setup
-- Docker : We can call it the gigchad method. If you don't know anything about docker you can check https://www.youtube.com/watch?v=iqqDU2crIEQ. 
+- Simple installation : you can download packaged versions from your system <https://www.dolibarr.org/downloads.php>
+- Advance installation : Build from source and setup the web server and datatbase <https://github.com/Dolibarr/dolibarr#advanced-setup>
+- Docker : We can call it the gigchad method. If you don't know anything about docker you can check <https://www.youtube.com/watch?v=iqqDU2crIEQ>. 
 
 `Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.`
 
-There is a docker image for Dolibarr created by [tuxgasy](https://hub.docker.com/u/tuxgasy)  https://hub.docker.com/r/tuxgasy/dolibarr
+There is a docker image for Dolibarr created by [tuxgasy](https://hub.docker.com/u/tuxgasy)  <https://hub.docker.com/r/tuxgasy/dolibarr>
 
 # Dolibarr installation with Docker
 
-Before you continue, you should install Docker on your system. We're going to also need docker-compose https://docs.docker.com/get-docker/
+Before you continue, you should install Docker on your system. We're going to also need docker-compose <https://docs.docker.com/get-docker/>
 
-For me, I was using Kali Linux https://www.kali.org/docs/containers/installing-docker-on-kali/ 
+For me, I was using Kali Linux <https://www.kali.org/docs/containers/installing-docker-on-kali/> 
 
 I started by pulling the Dolibarr Docker image.
 
@@ -146,7 +146,7 @@ We can see the error message after forwarding the request.
 
 # Where is the token ?
 
-view-source:http://192.168.1.110/index.php?mainmenu=home
+<view-source:http://192.168.1.110/index.php?mainmenu=home>
 
 If we check the source page, we see the used token a also some variables.
 
@@ -206,10 +206,10 @@ Now we are going to start building our script to bypass the captcha code. Here i
 For our captcha code, It's loaded from a php file 
 
 ```html
-<img class="inline-block valignmiddle" src="[/core/antispamimage.php](http://192.168.1.110/core/antispamimage.php)" border="0" width="80" height="32" id="img_securitycode" />
+<img class="inline-block valignmiddle" src="/core/antispamimage.php" border="0" width="80" height="32" id="img_securitycode" />
 ```
 
-http://192.168.1.110/core/antispamimage.php
+<http://192.168.1.110/core/antispamimage.php>
 
 ![Pasted image 20220731222938](https://user-images.githubusercontent.com/72421091/182227943-e2b5ab45-5db4-49f7-b25a-c2172807afd4.png)
 
@@ -217,11 +217,15 @@ In each call to this file, a new valid captcha is generated. It's the same mecha
 
 ![Pasted image 20220731223038](https://user-images.githubusercontent.com/72421091/182227952-f8066210-1358-42d3-95f5-d7892082d7e5.png)
 
-To be able to extract characters from captcha image. I'll use Python-tesseract https://pypi.org/project/pytesseract/
+To be able to extract characters from captcha image. I'll use Python-tesseract <https://pypi.org/project/pytesseract/>
 
 `Python-tesseract is a python wrapper for Google's Tesseract-OCR`
 
-We need to install Tesseract-OCR first before using it with python https://tesseract-ocr.github.io/tessdoc/Home.html
+We need to install Tesseract-OCR first before using it with python <https://tesseract-ocr.github.io/tessdoc/Home.html>
+
+```
+Optical Character Recognition (OCR) is the process of detecting and reading text in images through computer vision. 
+```
 
 For Kali Linux 
 
@@ -306,13 +310,13 @@ If we login with right credentials we can see a 302 redirection.
 
 I did a simple test for the right login detection. If we find no error message, it's a successful login. It's just for the POC. Better have a test case with the 302 redirection status code.
 
-Note : 
+Notes after debugging : 
 - My post request refuses to stop following redirects with the option "allow_redirects=False". 
-- The probleme is with the used url, i need to use `/index.php?mainmenu=home` instead of `/admin/index.php?mainmenu=home` to have the 302 redirection.
+- The problem is with the used url, i need to use `/index.php?mainmenu=home` instead of `/admin/index.php?mainmenu=home` to have the 302 redirection.
 
 # POC 
 
-Now i'll combine the ocr reading with the login post request to bruteforce login.
+Now i'll combine the OCR reading with the login post request to bruteforce login.
 - I'll use beautifulsoup library to extract token and error messages.
 - Simple loop for testing passwords from a file. I used [:-1] to remove "\n" from passwords to simplify.
 - Use the headers and data values from the captured login post request.
@@ -429,18 +433,18 @@ for password in passwords:
 # Kudos
 
 Thanks to some exploits authors in exploit-db, I was inspired by their code : 
-- Dolibarr ERP-CRM 12.0.3 - Remote Code Execution (Authenticated) https://www.exploit-db.com/exploits/49269 
-- Dolibarr 12.0.3 - SQLi to RCE : https://www.exploit-db.com/exploits/49240
+- Dolibarr ERP-CRM 12.0.3 - Remote Code Execution (Authenticated) <https://www.exploit-db.com/exploits/49269>  
+- Dolibarr 12.0.3 - SQLi to RCE : <https://www.exploit-db.com/exploits/49240>  
 
 # Tool in Github 
 
 I published the tool with the name `DoliBrute`. It has a more clean code than the POC. I'll work on it for more updates.
 
-https://github.com/BaadMaro/DoliBrute 
+<https://github.com/BaadMaro/DoliBrute>  
 
 ![Pasted image 20220801192208](https://user-images.githubusercontent.com/72421091/182228226-64823325-9ddb-43d1-8bf7-388fa6327136.png)
 
 
 # Conclusion
 
-I hope you find this article useful. If you want to hunt for vulnerabilities on Dolibarr, go check their secrurity policy https://github.com/Dolibarr/dolibarr/security/policy
+I hope you find this article useful. If you want to hunt for vulnerabilities on Dolibarr, go check their secrurity policy <https://github.com/Dolibarr/dolibarr/security/policy>  
