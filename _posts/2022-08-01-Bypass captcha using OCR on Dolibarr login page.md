@@ -14,6 +14,8 @@ author:
 
     link: https://baadmaro.github.io
 
+image: /assets/img/posts/dolibrute.png
+
 ---
 
 # Presentation

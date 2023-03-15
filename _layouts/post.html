@@ -99,7 +99,10 @@ tail_includes:
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  {{ content }}
+  {% if page.image %}
+  <img src="{{ page.image }}" class="post-preview-img">
+  {% endif %}
+  {{ content }}  
 </div>
 
 <div class="post-tail-wrapper text-muted">
