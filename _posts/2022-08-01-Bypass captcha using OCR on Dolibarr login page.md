@@ -18,8 +18,6 @@ image: /assets/img/posts/dolibrute.png
 
 ---
 
-# Presentation
-
 Today i'm going to explain how i was able to bypass captcha using OCR on Dolibarr login page, and create a script for it.
 
 Output : 
