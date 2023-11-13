@@ -9,12 +9,9 @@ on:
       - LICENSE
       
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
-  pull-requests: write
-  issues: write
-  repository-projects: write
   
 jobs:
   continuous-delivery:
