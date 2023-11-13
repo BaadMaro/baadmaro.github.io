@@ -7,8 +7,12 @@ on:
       - .gitignore
       - README.md
       - LICENSE
+      
 permissions:
+  contents: read
+  pages: write
   id-token: write
+  
 jobs:
   continuous-delivery:
 
