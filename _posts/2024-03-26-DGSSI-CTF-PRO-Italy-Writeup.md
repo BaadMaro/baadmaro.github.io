@@ -4,9 +4,9 @@ layout: post
 
 title: DGSSI CTF PRO 2024 - Italy Writeup
 
-categories: [Web]
+categories: [Machine, Writeup, CTF]
 
-tags: [DGSSI]
+tags: [DGSSI, CTF, Writeup]
 
 author:
 
@@ -20,7 +20,7 @@ image: /assets/img/posts/DGSSI-CTF-Italy-lab.png
 
 The lab was included in the professional **DGSSI** CTF hosed in **SecDojo** platform on February 7, 2024.
 
-https://www.linkedin.com/showcase/dgssi-ctf-2024/
+[https://www.linkedin.com/showcase/dgssi-ctf-2024/](https://www.linkedin.com/showcase/dgssi-ctf-2024/)
 
 ![Pasted image 20240325012305](https://github.com/BaadMaro/baadmaro.github.io/assets/72421091/c0a730c7-21b0-49b6-9d3c-8e271fd7ac5e)
 
