@@ -177,7 +177,7 @@ Name          : SNMP
 Check         : Modifiable Services
 ```
 
-We can do it using PowerUp or manually. The PowerUp command is `Invoke-ServiceAbuse -Name 'SNMP'
+We can do it using PowerUp or manually. The PowerUp command is `Invoke-ServiceAbuse -Name 'SNMP'`
 
 The abuse command can be modified with a specific command or a specific user/pass created as administrator
 
@@ -315,7 +315,7 @@ taylor:1009:aad3b435b51404eeaad3b435b51404ee:2e9f7a4fe52270ad2db1732c6cdb4428:::
 
 ## Taylor shell
 
-I didn't take a note on how I accessed Taylor's account. It could be using pass the hash with RDP or impacket-psexec
+I didn't take a note on how I accessed Taylor's account. It could be using pass the hash with RDP.
 
 Now with a access to Taylor user, I started checking directories
 
