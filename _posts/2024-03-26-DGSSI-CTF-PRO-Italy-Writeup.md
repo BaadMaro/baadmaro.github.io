@@ -495,8 +495,8 @@ I didn't keep detailed notes for this part, I'll do a recap for it
 ![Pasted image 20240325005015](https://github.com/BaadMaro/baadmaro.github.io/assets/72421091/d39d6157-8186-4ad5-ac46-efcaf06f57b1)
 - Part of users (we have a lot)
 ![2024-03-25_00h51_50](https://github.com/BaadMaro/baadmaro.github.io/assets/72421091/3c48c7d0-8d1e-4695-ab96-eb4ac93f1762)
-- Our user backup is a member of Backup Operators. We can use that to dump SAM and other hives to extract hashes https://www.bordergate.co.uk/backup-operator-privilege-escalation/
-- I was able to get the hives using impacket-reg https://wadcoms.github.io/wadcoms/Impacket-Reg/
+- Our user backup is a member of Backup Operators. We can use that to dump SAM and other hives to extract hashes [https://www.bordergate.co.uk/backup-operator-privilege-escalation/](https://www.bordergate.co.uk/backup-operator-privilege-escalation/)
+- I was able to get the hives using impacket-reg [https://wadcoms.github.io/wadcoms/Impacket-Reg/](https://wadcoms.github.io/wadcoms/Impacket-Reg/)
 - I had issues extracting the hashes from hives using pypykatz. I'm not sure if I tried `impacket-secretsdump`. I was also mixing registry files from `imapcket-reg` and the other ones from SMB share so maybe I got some of them corrupted.
 - I wasn't able to get it to work so I stopped here to check other labs in the CTF.
 
