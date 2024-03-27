@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: https://baadmaro.github.io/sitemap.xml
+
